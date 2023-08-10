@@ -8,7 +8,11 @@ import uuid
 
 # FUNCIÓN 1
 def process_gm_metadata_files(paths):
-    """Explicación"""
+    """
+    Esta función toma una lista de rutas de archivos JSON que contienen metadatos de Google Maps.Realiza la extracción y transformación de los datos, y luego guarda los resultados en archivos CSV.
+    - Args: paths (list), una lista de rutas de archivos JSON de metadatos de Google Maps.
+    - Returns: str, Un mensaje que indica que los archivos 'gm_restaurants.csv' y 'states.csv' se han guardado con éxito.
+    """
     result_dataframes = []
 # EXTRACCIÓN
     for path in paths:
@@ -123,7 +127,15 @@ process_gm_metadata_files(paths)
 
 # FUNCIÓN 2:
 def process_gm_reviews_files(paths, df_metadata=None):
-    """Explicación"""
+    """  
+    Esta función toma una lista de rutas de archivos JSON que contienen reviews de Google Maps. Realiza transformaciones en los datos y guarda los resultados en un archivo CSV.
+    - Args:
+        - paths (list): Una lista de listas de rutas de archivos JSON de reviews, organizadas por estado.
+        - df_metadata (DataFrame, opcional): DataFrame con metadatos de restaurantes. Si no se proporciona, 
+          se cargará el DataFrame desde el archivo 'gm_restaurants.csv'.
+    - Returns:
+        - str: Un mensaje que indica que el archivo 'gm_reviews.csv' se ha guardado con éxito.
+    """
     if df_metadata is None:
         df_metadata = pd.read_csv("POST_ETL_DATASETS/Google_Maps_Data/gm_restaurants.csv")
         
@@ -250,7 +262,12 @@ process_gm_reviews_files(paths)
 
 # FUNCIÓN 3:
 def process_yelp_metadata(path):
-    """Explicación"""
+    """
+    Esta función toma un DataFrame de metadatos de Yelp y realiza transformaciones en los datos. Luego guarda los resultados en archivos CSV ('yelp_restaurants.csv' y 'cities.csv').
+    - Args: path (str), ruta del archivo pickle de la metadata de Yelp.
+    - Returns: str, Un mensaje que indica que los archivos 'yelp_restaurants.csv' y 'cities.csv' se han guardado 
+      con éxito.
+    """
 # EXTRACCIÓN   
     # Leo el archivo .pkl
     yelp_metadata = pd.read_pickle(path)
@@ -352,7 +369,16 @@ process_yelp_metadata("business.pkl")
 
 # FUNCIÓN 4:
 def process_yelp_reviews_file(path, chunk_size, df_metadata=None):
-    """Explicación"""
+    """
+    Esta función toma un archivo JSON de reviews de Yelp y lo procesa en trozos de tamaño especificado. Realiza transformaciones en los datos y guarda los resultados en un archivo CSV ('yelp_reviews.csv').
+    - Args:
+        - path (str): Ruta del archivo JSON de reviews de Yelp.
+        - chunk_size (int): Tamaño de cada trozo para la lectura en trozos. 
+        - df_metadata (DataFrame, opcional): DataFrame con metadatos de restaurantes de Yelp. Si no se proporciona, 
+          se cargará el DataFrame desde el archivo 'yelp_restaurants.csv'.
+    - Returns:
+        - str: Un mensaje que indica que el archivo 'yelp_reviews.csv' se ha guardado con éxito.
+    """
     # Extraigo el df a partir del cual se realizará un filtro luego:
     if df_metadata is None:
         df_metadata = pd.read_csv("POST_ETL_DATASETS/Yelp_Data/yelp_restaurants.csv")
@@ -407,7 +433,17 @@ process_yelp_reviews_file(path, chunk_size)
 
 # FUNCIÓN 5:
 def process_yelp_users(path, df_reviews=None):
+
+    """
+    Esta función toma un archivo Parquet de usuarios de Yelp y realiza transformaciones en los datos. Luego guarda los resultados en un archivo CSV ('yelp_users.csv').
     
+    - Args:
+        - path (str): Ruta del archivo Parquet de usuarios de Yelp.
+        - df_reviews (DataFrame, opcional): DataFrame de revisiones de Yelp. Si no se proporciona, se cargará el
+          DataFrame desde el archivo 'yelp_reviews.csv'.
+    - Returns:
+        - str: Un mensaje que indica que el archivo 'yelp_users.csv' se ha guardado con éxito.
+    """
     # Defino el df que luego se utilizará para un filtro:
     if df_reviews==None:
         df_reviews= pd.read_csv('POST_ETL_DATASETS/Yelp_Data/yelp_reviews.csv')
