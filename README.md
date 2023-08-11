@@ -98,10 +98,10 @@ A continuación, se brindan los enlaces correspondientes a la data original.
 >>>[Diccionario de datos](https://docs.google.com/spreadsheets/d/14G-V0MYpDUzjEogw37VsYo75ure0puJb/edit#gid=754630663)
 - [POST EDA-ETL](https://drive.google.com/drive/folders/1yP5gKRrJmlng-44zHeOGkmLozZCR3yze?usp=drive_link)
 
-# 📍  Flujo de trabajo y Tech Stack <a name="flujodetrabajo"></a>
+# 📍  Flujo de trabajo <a name="flujodetrabajo"></a>
 <p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Work%20flow.jpeg"><p>
 
-# 📍  EDA - ETL <a name="edaetl"></a>
+# 📍  EDA - ETL <a name="edaetl"></a> : [Notebook](https://drive.google.com/file/d/1WEXVs5lHsXclyavWLYiscu9OxmLr1TAf/view?usp=sharing) 
 Se realizaron los siguientes pasos en los procedimientos de EDA-ETL:
 
 #### 1. Proceso de Google Maps Metadata:
