@@ -101,6 +101,8 @@ def process_gm_metadata_files(paths):
     return me
 
 
+# LLAMO A LA FUNCIÓN 1
+
 # Creo variables con el path de cada archivo
 path1 = "metadata-sitios/1.json"
 path2= "metadata-sitios/2.json"
@@ -123,9 +125,11 @@ paths = [ path1,path2,path3,
 # Llamo a la función
 process_gm_metadata_files(paths)
 
-#######################################################################################################################
+
+# ____________________________________________________________________________________________________________________
 
 # FUNCIÓN 2:
+
 def process_gm_reviews_files(paths, df_metadata=None):
     """  
     Esta función toma una lista de rutas de archivos JSON que contienen reviews de Google Maps. Realiza transformaciones en los datos y guarda los resultados en un archivo CSV.
@@ -136,29 +140,38 @@ def process_gm_reviews_files(paths, df_metadata=None):
     - Returns:
         - str: Un mensaje que indica que el archivo 'gm_reviews.csv' se ha guardado con éxito.
     """
+    
+    # Extraigo los csvs a utilizar para un filtro posterior
     if df_metadata is None:
         df_metadata = pd.read_csv("POST_ETL_DATASETS/Google_Maps_Data/gm_restaurants.csv")
         
     states = pd.read_csv('POST_ETL_DATASETS/Google_Maps_Data/states.csv')
     
+    # Creo el diccionario para guardar cada df resultante
     result_dataframes = []
     
+    # Itero por cada path:
     for state_idx, state_paths in enumerate(paths):
-        state_iso = states.loc[state_idx, 'iso']
+        state_id = states.loc[state_idx, 'state_id']
         
         for path in state_paths:
             df = pd.read_json(path, lines=True)
             
+            # Convierto el tipo de dato de "time" a la unidad correcta
             df['time'] = pd.to_datetime(df['time'], unit='ms').dt.date
+            
+            # Filtro los registros a partir del año 2018
             df = df[df['time'].apply(lambda x: x.year) >= 2018]
             
+            # Filtro las reviews por solo restaurantes
             lista_id_restaurantes = list(df_metadata['gmap_id'])
             df = df[df['gmap_id'].isin(lista_id_restaurantes)]
             
+            # Elimino columnas innecesarias
             df = df.drop(['name', 'pics'], axis=1)
             
-            # Creo la columna 'state' 
-            df['state_iso'] = state_iso
+            # Creo la columna 'state_id' 
+            df['state_id'] = state_id
             
             # Cambio el nombre de la columna "time" a "date":
             df.rename(columns = {'time': 'date'}, inplace=True)
@@ -180,7 +193,7 @@ def process_gm_reviews_files(paths, df_metadata=None):
     merged_dataframe['review_id'] = [uuid.uuid4() for _ in range(len(merged_dataframe))]
     
     # Ordeno columnas:
-    columns = ['review_id', 'user_id', 'date', 'rating', 'text', 'resp', 'gmap_id', 'state_iso']
+    columns = ['review_id', 'user_id', 'date', 'rating', 'text', 'resp', 'gmap_id', 'state_id']
     merged_dataframe = merged_dataframe[columns]
     
     #CARGA
@@ -189,6 +202,9 @@ def process_gm_reviews_files(paths, df_metadata=None):
     me="Función 2: 'gm_reviews.csv' guardado con éxito"
     
     return me
+
+
+# LLAMO A LA FUNCIÓN 2
 
 # Defino los paths
 # California
@@ -258,9 +274,10 @@ paths=[[cal1, cal2 , cal3, cal4, cal5, cal6, cal7, cal8, cal9, cal10, cal11 , ca
 # Llamo a la función:
 process_gm_reviews_files(paths)
 
-#######################################################################################################################
+#_____________________________________________________________________________________________________________________
 
 # FUNCIÓN 3:
+
 def process_yelp_metadata(path):
     """
     Esta función toma un DataFrame de metadatos de Yelp y realiza transformaciones en los datos. Luego guarda los resultados en archivos CSV ('yelp_restaurants.csv' y 'cities.csv').
@@ -362,10 +379,13 @@ def process_yelp_metadata(path):
     
     return me
 
-# LLamo a la función:
+
+# LLAMO A LA FUNCIÓN 3:
 process_yelp_metadata("business.pkl")
 
-#####################################################################################################################
+
+#_________________________________________________________________________________________________________________
+
 
 # FUNCIÓN 4:
 def process_yelp_reviews_file(path, chunk_size, df_metadata=None):
@@ -420,6 +440,9 @@ def process_yelp_reviews_file(path, chunk_size, df_metadata=None):
     
     return me
 
+
+# LLAMO A LA FUNCIÓN 4
+
 # Defino los parámetros:
 path = 'C:/Users/Usuario/Downloads/review.json'
 chunk_size = 100000
@@ -427,11 +450,11 @@ chunk_size = 100000
 # Llamo a la función:
 process_yelp_reviews_file(path, chunk_size)
 
-#####################################################################################################################
-
+#___________________________________________________________________________________________________________________
 
 
 # FUNCIÓN 5:
+
 def process_yelp_users(path, df_reviews=None):
 
     """
@@ -491,5 +514,5 @@ def process_yelp_users(path, df_reviews=None):
     
     return me
 
-# Llamo a la función:
+# LLAMO A LA FUNCIÓN 5:
 yelp_users = process_yelp_users('user.parquet')
