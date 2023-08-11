@@ -197,7 +197,7 @@ A partir de estas transformaciones, se construyeron las siguientes funciones par
 * Numpy
 * Pandas
 * Re
-* pyarrow.parquet as pq
+* pyarrow
 * uuid
 * Matplotlib
 * Seaborn
