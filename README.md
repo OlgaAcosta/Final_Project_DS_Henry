@@ -74,7 +74,7 @@ Los cuatro primeros están orientados a la consecución del primer objetivo rela
 2. <b>Retención de clientes</b>:	Aumentar en 4 puntos porcentuales la tasa de retención de clientes en el próximo año.
 >> * Métrica: cantidad de clientes anual que comentaron más de una vez / cantidad total anual de clientes que comentaron.
 >> * Objetivo: 10% en el 2022.
-3.	<b>Satisfacción del cliente respecto al servicio</b>: Reducir en 30 puntos porcentuales la tasa de satisfacción del cliente respecto al servicio, en el próximo trimestre.
+3.	<b>Insatisfacción del cliente respecto al servicio</b>: Reducir en 30 puntos porcentuales la tasa de satisfacción del cliente respecto al servicio, en el próximo trimestre.
 >> * Métrica: cantidad de comentarios negativos respecto al servicio sobre cantidad de comentarios totales respecto al servicio.
 >> * Objetivo: 7% en el próximo trimestre (2022-Q1).
 4. <b>Usuarios elite</b>: Aumentar en 18% la tasa de reseñas de usuarios elite en el próximo trimestre.
