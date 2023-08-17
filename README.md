@@ -68,20 +68,26 @@ Lure Fish House - 'Seafood restaurant' | Sta. Barbara, California) | [Website](h
 
 # 📍  KPI's <a name="kpis"></a>
 Los cuatro primeros están orientados a la consecución del primer objetivo relacionado a la mejora del servicio: el primero consiste en:  
-1. <b>Comentarios negativos</b>: Reducir en 10% la tasa de comentarios negativos en el próximo trimestre.
->> * Métrica: cantidad de comentarios negativos sobre cantidad de comentarios totales.
-2. <b>Respuestas personalizadas</b>:	Aumentar en 20% la tasa de respuestas personalizadas en el próximo trimestre.
->> * Métrica: cantidad de respuestas sobre cantidad de reviews.
-3.	<b>Satisfacción del cliente</b>: Aumentar en 15% la tasa de satisfacción del cliente respecto a la velocidad de atención, en el próximo trimestre.
->> * Métrica: cantidad de comentarios positivos respecto a la velocidad de atención sobre cantidad de comentarios totales respecto a la velocidad de atención.
-4. <b>Usuarios elite</b>: Aumentar en 10% la tasa de reseñas positivas de usuarios elite en el próximo trimestre.
->> * Métrica: cantidad de reseñas positivas de usuarios elite sobre la cantidad de reseñas positivas totales.
+1. <b>Cantidad de reseñas</b>: Aumentar en 66 puntos porcentuales la tasa de nivel óptimo de reseñas, en el próximo trimestre (22 puntos porcentuales cada mes).
+>> * Métrica: cantidad de reseñas del mes actual sobre cantidad máxima de reseñas alcanzadas en un mes.
+>> * Objetivo: 30% en el próximo trimestre (2022-Q1).
+2. <b>Retención de clientes</b>:	Aumentar en 4 puntos porcentuales la tasa de retención de clientes en el próximo año.
+>> * Métrica: cantidad de clientes anual que comentaron más de una vez / cantidad total anual de clientes que comentaron.
+>> * Objetivo: 10% en el 2022.
+3.	<b>Satisfacción del cliente respecto al servicio</b>: Reducir en 30 puntos porcentuales la tasa de satisfacción del cliente respecto al servicio, en el próximo trimestre.
+>> * Métrica: cantidad de comentarios negativos respecto al servicio sobre cantidad de comentarios totales respecto al servicio.
+>> * Objetivo: 7% en el próximo trimestre (2022-Q1).
+4. <b>Usuarios elite</b>: Aumentar en 18% la tasa de reseñas de usuarios elite en el próximo trimestre.
+>> * Métrica: cantidad de reseñas  de usuarios elite sobre la cantidad de reseñas  totales por trimestre.
+>> * Objetivo: 40% al finalizar el periodo 2022-Q1.
 
-Los dos últimos se orientan a la consecución del segundo objetivo relacionado a la implementación competitiva de la nueva oferta de comida mexicana:      
-5.  <b>Clientes de comida mexicana</b>: Aumentar en 20%  la tasa de clientes de comida mexicana en el siguiente trimestre.
->> * Métrica: del total de personas que consumen comida mexicana, cuántos son clientes nuestros.
-6.	<b>Oferta-Demanda de comida mexicana</b>: Reducir en un 5% la diferencia de la proporción Oferta-Demanda respecto a 1 en los estados donde esta proporción sea menor a 1 (baja oferta) entre California, Florida y Texas mediante la apertura de nuevos locales en el próximo año.
+Los dos últimos se orientan a la consecución del segundo objetivo relacionado a la implementación competitiva de la nueva oferta de comida mexicana:  
+5. <b>Clientes de comida mexicana</b>: Aumentar en 23% la tasa de clientes de comida mexicana en el siguiente trimestre.
+>> * Métrica: clientes que consuman comida mexicana sobre clientes totales.
+>> * Objetivo: 45% al finalizar el próximo trimestres 2022-Q1. 
+6.	<b>PLUS: Oferta-Demanda de comida mexicana</b>: A partir de la relación de la cantidad de restaurantes de comida mexicana (oferta) sobre la cantidad de reviews de comida mexicana (demanda), detectar las ciudades con menor tasa con el fin de identificar las ciudades potenciales donde abrir nuevos locales del rubro de comida mexicana. 
 >> * Métrica: cantidad de restaurantes de comida mexicana sobre cantidad de reseñas de comida mexicana por estado.
+>> * Objetivo: Identificar el top 3 de ciudades potenciales por estado.
 
 
 # 📍  Alcance <a name="alcance"></a>
