@@ -11,9 +11,10 @@
 - [Alcance](#alcance)
 - [Contexto de los datos](#contextodelosdatos)
 - [Flujo de trabajo](#flujodetrabajo)
-- [Contenido del repositorio](#contenidodelrepositorio)
 - [EDA-ETL](#edaetl)
 - [Análisis](#analisis)
+- [Modelo Machine Learning](#ml)
+- [Deployment](#dep)
 - [Herramientas utilizadas](#herramientas)
 - [Colaboradores](#colaboradores)
 
@@ -191,12 +192,52 @@ A partir de estas transformaciones, se construyeron las siguientes funciones par
 4. process_yelp_reviews_file: Extrae, transforma y filtra revisiones de Yelp en trozos.
 5. process_yelp_users: Extrae y transforma usuarios de Yelp.
 
+<b>Puede observarse el paso a paso en el notebook provisto, o en el archivo *EDA-ETL* que se encuentra en este repositorio.</b>
 
 
+# 📍  Análisis e insights: <a name="analisis"></a> [Notebook](https://drive.google.com/file/d/1pypyJQlzKG_iaCaHJ3cdk-Ye_kGFHTOi/view?usp=sharing)
+A partir del objetivo planteado, se analizó el comportamiento y evolución de los usuarios a partir de sus reviews en cuánto a los siguientes aspectos:
+* Evolución de la cantidad de reviews de manera general, de los restaurantes marinos y de Lure Fish House.
+* Evolución de la tasa de retención de clientes por mes y año de Lure Fish House.
+* Contenido de las reviews de Lure y, en específico, las relacionadas al mal servicio.
+* Cantidad de reviews realizadas por usuarios elite.
+* Cantidad de reviews realizadas a restaurantes de comida mexicana.
 
+De lo anterior, se halló, entre otras cosas, que:
+* La cantidad máxima a la que ha llegado ha sido de 30, mientras que la cantidad máxima del top 1 ha sido del doble, 60.
+* Actualmente, nuestro cliente se encuentra al nivel de los últimos puestos del top 5 de restaurantes marinos con más reseñas por mes, teniendo menos del 50% de cantidad de reviews respecto al restaurante que tiene más reviews.
+* Todos los restaurantes del top 5 han disminuido su cantidad de reseñas respecto a la evolución general.
+* Es conveniente poner el foco en aumentar la cantidad actual para que vuelva a llegar a 30, ya que esta sería una cantidad óptima a partir de la cual seguir creciendo.
+  
+* En general, los clientes suelen estar satisfechos con su experiencia en Lure Fish House y con los platos ofrecidos: más del 80% de comentarios relacionados a la atención de los meseros son buenos, teniendo 4 o 5 estrellas. Sin embargo, el 16% de comentarios totales respecto al servicio son o neutros o negativos (d 1 a 3 estrellas). Esto muestra que hay un aspecto importante que mejorar relacionado a la atención de los meseros y al tiempo, ya que las palabras *service*, *server*, *waiter*, *table*, *order*, *time* y *minute* destacan en el wordcloud. Además, esto puede tener que ver con la decisión de retorno al restaurante , puesto que las palabras *back* y*never* también tienen una presencia importante.
 
+<b>Puede observarse el paso a paso en el notebook provisto, o en el archivo *Analysis* que se encuentra en este repositorio.</b>
+ 
+# 📍  Dashboard: <a name="analisis"></a> [Archivo Pbi](https://drive.google.com/file/d/1GFoQ7qi4O1usQHHR4Ss4CCDubPafkB1t/view?usp=sharing)
+El dashboard se realizó en Power BI. 
+<b>Puede observarse en el link del archivo pbi provisto, o en el archivo *Dashboard* que se encuentra en este repositorio.</b>
 
-# 📍  Análisis e insights <a name="analisis"></a>
+# 📍 Modelo Machine Learning <a name="ml"></a>
+Se realizaron los siguientes pasos para el entrenamiento de nuestro modelo de análisis de sentimiento:
+* Extracción:
+>> -Se leyeron archivos CSVs desde Google Cloud Storage que contenían metadatos de Google Maps y YELP y se cargaron en DataFrames.
+
+* Transformación:
+>> -Se eliminaron las columnas que no se utilizarían en el modelo dejando la estructura: 'review_id','stars','text'
+>> -Se consideraron sólo reviews que tengan una longitud mayor a 2 y menor de 500 caracteres.
+>> -Se realizó el preprocesamiento de los reviews quitando los números, signos de puntuación, y volviendo minúsculas, esto se guardo en una nueva columna: 'cleaned_text'
+>> -Se realizó el mapeado de sentimiento considerando la información de la columna 'starts' de la siguiente manera: calificación 1 y 2 sentimiento negativo, calificiación 3 como sentimiento neutral, y calificación 4 y 5 como positivo.
+* Modelos utilizados:
+>> -SVM (support vector machine)
+>> -BERT (Bidirectional Encoder Representations from Transformers)
+* Entrenamiento:
+>> -La representación de los reviews se realizó mediante el TF-IDF considerando 1000 feautures.
+>> -El entrenamiento se realizó de utilizando el 80% de la data para el entranmiento y el 20% para las pruebas de validación
+* Carga:
+>> -Se guardaron las matrices TF-IDF como: tfidf_vectorizer.pkl  y también los pesos ajustados de nuestro modelos: svm_model.pkl y bert_model.pkl para ser utilizados en streamlit todo esto desde Google Cloud Storage
+
+# 📍  Deployment <a name="dep"></a>
+El funcionamiento del modelo realizado se desarrolló a través de *Streamlit* y puede visualizarse en este [link](https://app-final-project-kze5wzgats9sj7bhmjgyt4.streamlit.app/).
 
 # 📍  Herramientas utilizadas <a name="herramientas"></a>
 * Python
@@ -211,8 +252,8 @@ A partir de estas transformaciones, se construyeron las siguientes funciones par
 * Sckit Learn
 * NLTK
 * Google Cloud
-* Big Query
-* Looker
+* Power BI
+* Streamlit
 
 # 📍  Colaboradores <a name="colaboradores"></a>
 <p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Team.jpeg"><p>
