@@ -212,11 +212,19 @@ De lo anterior, se halló (entre otroas cosas) que:
 <b>Se puede revisar el paso a paso en el notebook provisto o en el archivo *Analysis* que se encuentra en este repositorio.</b>
 
 # 📍  Dashboard: <a name="dashboard"></a> [Archivo pbix](https://drive.google.com/file/d/1GFoQ7qi4O1usQHHR4Ss4CCDubPafkB1t/view?usp=drive_link)
-El dashboard se realizó en Power BI, y puede visualizarse en el archivo pbix provisto o en en el archivo *Dashboard*  que se encuentra en este repositorio.
+El dashboard se realizó en Power BI, y puede visualizarse en el archivo pbix provisto.
+
+<p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Dashboard%20images/1.jpeg"><p>
+<p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Dashboard%20images/3.jpeg"><p>
+<p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Dashboard%20images/4.jpeg"><p>
+<p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Dashboard%20images/5.jpeg"><p>
+<p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Dashboard%20images/6.jpeg"><p>
+<p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Dashboard%20images/2.jpeg"><p>
 
 
 
-# 📍  Modelo de Machine Learning: <a name="ml"></a>
+
+# 📍  Modelo de Machine Learning: <a name="ml"></a>[Carpeta](https://drive.google.com/drive/folders/1DT2TMn6X_sqNpb6RLsMH-maQbPSgG6Fx?usp=sharing)
 Se realizaron los siguientes pasos para el entrenamiento de nuestro modelo de análisis de sentimiento:
 * Extracción:
 >> -Se leyeron archivos CSVs desde Google Cloud Storage que contenían metadatos de Google Maps y YELP y se cargaron en DataFrames.
@@ -235,7 +243,7 @@ Se realizaron los siguientes pasos para el entrenamiento de nuestro modelo de an
 * Carga:
 >> -Se guardaron las matrices TF-IDF como: tfidf_vectorizer.pkl  y también los pesos ajustados de nuestro modelos: svm_model.pkl y bert_model.pkl para ser utilizados en streamlit todo esto desde Google Cloud Storage
 
-<b>Se puede revisar el paso a paso en el notebook provisto o en el archivo *ML* que se encuentra en este repositorio.</b>
+<b>Se puede revisar el paso a paso en la carpeta provista o en la que se encuentra en este repositorio, llamada *ML* (contiene un archivo con el preprocesamiento y entrenamiento, y otro archivo con el modelo *Sentiment Analysis* y Bert pre entrenado).</b>
 
 # 📍  Deployment <a name="dep"></a>
 El funcionamiento del modelo realizado se desarrolló a través de *Streamlit* y puede visualizare en este [link](https://app-final-project-kze5wzgats9sj7bhmjgyt4.streamlit.app/)
@@ -257,6 +265,6 @@ El funcionamiento del modelo realizado se desarrolló a través de *Streamlit* y
 * Streamlit
 
 # 📍  Colaboradores <a name="colaboradores"></a>
-<p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Team.jpeg"><p>
+<p align=center><img src="https://github.com/OlgaAcosta/Final_Project_DS_Henry/blob/main/src/Team.png"><p>
  @OlgaAcosta | @FGC97 | @Roberto4129 | @juanjolopez28 | @HernAle
 
